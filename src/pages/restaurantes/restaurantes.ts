@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, LoadingController, AlertController } from 'ionic-angular';
 import { Restaurante } from '../../domain/restaurante/restaurante';
 import { Http } from '@angular/http';
+import { CardapiosPage } from "../cardapios/cardapios";
 
 @Component({
   selector: 'page-restaurantes',
@@ -42,6 +43,7 @@ export class RestaurantesPage {
   }
   seleciona(restaurante){
     console.log('Entrou na Action seleciona');
+    this.navCtrl.push( CardapiosPage, {RestauranteSelecionado: restaurante})
   }
-  
+
 }
